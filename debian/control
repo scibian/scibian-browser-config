@@ -1,0 +1,15 @@
+Source: scibian-browser-config
+Section: edf
+Priority: extra
+Maintainer: Scibian Packaging Team <packaging@scibian.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+
+Package: scibian-browser-config
+Architecture: all
+Depends: firefox-esr, xul-ext-gnome-keyring,
+         xul-ext-ublock-origin, p11-kit
+Conflics: xul-ext-ublock
+Replaces: xul-ext-ublock
+Description: Settings for Scibian browser
+ Default settings for Scibian 8 browser

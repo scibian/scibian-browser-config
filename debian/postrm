@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+set -u
+ckbi=/usr/lib/firefox-esr/libnssckbi.so
+if [ calibre-browser-config = "$(dpkg-divert --listpackage $ckbi)" ]; then
+    unlink $ckbi
+    dpkg-divert --package calibre-browser-config \
+            --rename --remove $ckbi
+fi
+unset ckbi
+set +u
+
+#DEBHELPER#
+
+exit 0
